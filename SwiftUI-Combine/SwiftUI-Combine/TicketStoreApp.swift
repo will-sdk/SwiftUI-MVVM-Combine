@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct SwiftUI_CombineApp: App {
+struct TicketStoreApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LandingView()
         }
     }
 }
