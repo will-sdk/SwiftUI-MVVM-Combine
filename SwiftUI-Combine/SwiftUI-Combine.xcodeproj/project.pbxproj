@@ -16,6 +16,7 @@
 		3F0471E6291AC7C100D1AEA4 /* SwiftUI_CombineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471E5291AC7C100D1AEA4 /* SwiftUI_CombineUITestsLaunchTests.swift */; };
 		3F0471F3291ACCA900D1AEA4 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471F2291ACCA900D1AEA4 /* PrimaryButtonStyle.swift */; };
 		3F0471F5291ACE0100D1AEA4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471F4291ACE0100D1AEA4 /* Color+Extension.swift */; };
+		3F365EFD291C20EF00FFFDEB /* SelectTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		3F0471E5291AC7C100D1AEA4 /* SwiftUI_CombineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CombineUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		3F0471F2291ACCA900D1AEA4 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
 		3F0471F4291ACE0100D1AEA4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeam.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				3F0471CE291AC7C100D1AEA4 /* Preview Content */,
 				3F0471F2291ACCA900D1AEA4 /* PrimaryButtonStyle.swift */,
 				3F0471F4291ACE0100D1AEA4 /* Color+Extension.swift */,
+				3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */,
 			);
 			path = "SwiftUI-Combine";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			files = (
 				3F0471F3291ACCA900D1AEA4 /* PrimaryButtonStyle.swift in Sources */,
 				3F0471CB291AC7C000D1AEA4 /* LandingView.swift in Sources */,
+				3F365EFD291C20EF00FFFDEB /* SelectTeam.swift in Sources */,
 				3F0471C9291AC7C000D1AEA4 /* TicketStoreApp.swift in Sources */,
 				3F0471F5291ACE0100D1AEA4 /* Color+Extension.swift in Sources */,
 			);
