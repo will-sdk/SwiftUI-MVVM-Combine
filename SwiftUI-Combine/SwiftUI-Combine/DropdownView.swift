@@ -24,8 +24,8 @@ struct DropdownView: View {
                     Image(systemName: "arrowtriangle.down.circle")
                         .font(.system(size: 24, weight: .medium))
                 }
-            }.buttonStyle(PrimaryButtonStyle())
-        }
+            }.buttonStyle(PrimaryButtonStyle(fillColor: .primaryButton))
+        }.padding(20)
     }
 }
 
