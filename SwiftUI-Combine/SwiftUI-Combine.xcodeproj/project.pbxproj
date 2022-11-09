@@ -18,6 +18,7 @@
 		3F0471F5291ACE0100D1AEA4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471F4291ACE0100D1AEA4 /* Color+Extension.swift */; };
 		3F365EFD291C20EF00FFFDEB /* SelectTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */; };
 		3F365EFF291C216200FFFDEB /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365EFE291C216200FFFDEB /* DropdownView.swift */; };
+		3F365F01291C27F200FFFDEB /* SelectMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365F00291C27F200FFFDEB /* SelectMatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		3F0471F4291ACE0100D1AEA4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeam.swift; sourceTree = "<group>"; };
 		3F365EFE291C216200FFFDEB /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
+		3F365F00291C27F200FFFDEB /* SelectMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				3F0471F4291ACE0100D1AEA4 /* Color+Extension.swift */,
 				3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */,
 				3F365EFE291C216200FFFDEB /* DropdownView.swift */,
+				3F365F00291C27F200FFFDEB /* SelectMatch.swift */,
 			);
 			path = "SwiftUI-Combine";
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			files = (
 				3F0471F3291ACCA900D1AEA4 /* PrimaryButtonStyle.swift in Sources */,
 				3F0471CB291AC7C000D1AEA4 /* LandingView.swift in Sources */,
+				3F365F01291C27F200FFFDEB /* SelectMatch.swift in Sources */,
 				3F365EFD291C20EF00FFFDEB /* SelectTeam.swift in Sources */,
 				3F0471C9291AC7C000D1AEA4 /* TicketStoreApp.swift in Sources */,
 				3F0471F5291ACE0100D1AEA4 /* Color+Extension.swift in Sources */,

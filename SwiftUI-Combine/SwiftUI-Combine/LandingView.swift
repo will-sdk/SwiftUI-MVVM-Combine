@@ -33,7 +33,7 @@ struct LandingView: View {
                                     .foregroundColor(.white)
                                 Spacer()
                             }
-                        }.padding(.horizontal, 15)
+                        }.padding(15)
                             .buttonStyle(PrimaryButtonStyle())
                     }
                 }.frame(

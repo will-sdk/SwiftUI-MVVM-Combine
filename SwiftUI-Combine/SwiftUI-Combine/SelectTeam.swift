@@ -8,9 +8,26 @@
 import SwiftUI
 
 struct SelectTeam: View {
+    @State private var isActive = false
     var body: some View {
-        VStack {
-            
-        }.navigationTitle("Select Team")
+        ScrollView {
+            VStack {
+                DropdownView()
+                DropdownView()
+                Spacer()
+                NavigationLink(destination: SelectMatch(),
+                               isActive: $isActive) {
+                    Button(action: {
+                        isActive = true
+                    }) {
+                        Text("Next")
+                            .font(.system(size: 24, weight: .medium))
+                    }
+                }
+                
+            }.navigationTitle("Select Team")
+                .navigationBarBackButtonHidden(true)
+                .padding(.bottom, 15)
+        }
     }
 }
