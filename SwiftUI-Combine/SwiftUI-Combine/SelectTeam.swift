@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct SelectTeam: View {
+    @StateObject var viewModel = SelectTeamViewModel()
     @State private var isActive = false
+    
+    var dropdownList: some View {
+        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
+            DropdownView(viewModel: $viewModel.dropdowns[index])
+        }
+    }
+    
     var body: some View {
         ScrollView {
             VStack {
-                DropdownView()
-                DropdownView()
+                dropdownList
                 Spacer()
                 NavigationLink(destination: SelectMatch(),
                                isActive: $isActive) {
