@@ -45,9 +45,9 @@ extension SelectTeamViewModel {
         }
         
         enum TeamOption: String, CaseIterable, DropdowmOptionProtocol {
-            case cfc
-            case liverpool
-            case manu
+            case cfc = "Chelsea"
+            case liverpool = "LiverPool"
+            case manu = "Manchester United"
             
             var toDropdownOption: DropdownOption {
                 .init(type: .text(rawValue),
