@@ -13,8 +13,43 @@ final class SelectTeamViewModel: ObservableObject {
         .init(type: .amount)
     ]
     
+    enum Action {
+        case selectOption(index: Int)
+    }
+    
     var hasSelectedDropdown: Bool {
-        dropdowns.first(where: { $0.isSelected }) != nil
+        selectedDropdownIndex != nil
+    }
+    
+    var selectedDropdownIndex: Int? {
+        dropdowns.enumerated().first(where: { $0.element.isSelected })?.offset
+    }
+    
+    var displayOptions: [DropdownOption] {
+        guard let selectedDropdownIndex = selectedDropdownIndex else { return [] }
+        return dropdowns[selectedDropdownIndex].options
+    }
+    
+    func send(action: Action) {
+        switch action {
+        case let .selectOption(index):
+            guard let selectedDropdownIndex = selectedDropdownIndex else { return }
+            clearSelectedOption()
+            dropdowns[selectedDropdownIndex].options[index].isSelected = true
+            clearSelectedDropdown()
+        }
+    }
+    
+    func clearSelectedOption() {
+        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
+        dropdowns[selectedDropdownIndex].options.indices.forEach { index in
+            dropdowns[selectedDropdownIndex].options[index].isSelected = false
+        }
+    }
+    
+    func clearSelectedDropdown() {
+        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
+        dropdowns[selectedDropdownIndex].isSelected = false
     }
 }
 
