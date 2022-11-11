@@ -87,6 +87,9 @@ extension SelectTeamViewModel {
             case cfc = "Chelsea"
             case liverpool = "LiverPool"
             case manu = "Manchester United"
+            case tot = "Tottenham Hotspur"
+            case ars = "Arsenal"
+            case mancity = "Manchester City"
             
             var toDropdownOption: DropdownOption {
                 .init(type: .text(rawValue),
