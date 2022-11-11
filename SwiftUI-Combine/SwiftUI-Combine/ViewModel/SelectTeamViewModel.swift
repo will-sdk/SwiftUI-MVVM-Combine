@@ -12,6 +12,45 @@ final class SelectTeamViewModel: ObservableObject {
         .init(type: .team),
         .init(type: .amount)
     ]
+    
+    enum Action {
+        case selectOption(index: Int)
+    }
+    
+    var hasSelectedDropdown: Bool {
+        selectedDropdownIndex != nil
+    }
+    
+    var selectedDropdownIndex: Int? {
+        dropdowns.enumerated().first(where: { $0.element.isSelected })?.offset
+    }
+    
+    var displayOptions: [DropdownOption] {
+        guard let selectedDropdownIndex = selectedDropdownIndex else { return [] }
+        return dropdowns[selectedDropdownIndex].options
+    }
+    
+    func send(action: Action) {
+        switch action {
+        case let .selectOption(index):
+            guard let selectedDropdownIndex = selectedDropdownIndex else { return }
+            clearSelectedOption()
+            dropdowns[selectedDropdownIndex].options[index].isSelected = true
+            clearSelectedDropdown()
+        }
+    }
+    
+    func clearSelectedOption() {
+        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
+        dropdowns[selectedDropdownIndex].options.indices.forEach { index in
+            dropdowns[selectedDropdownIndex].options[index].isSelected = false
+        }
+    }
+    
+    func clearSelectedDropdown() {
+        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
+        dropdowns[selectedDropdownIndex].isSelected = false
+    }
 }
 
 extension SelectTeamViewModel {
@@ -48,6 +87,9 @@ extension SelectTeamViewModel {
             case cfc = "Chelsea"
             case liverpool = "LiverPool"
             case manu = "Manchester United"
+            case tot = "Tottenham Hotspur"
+            case ars = "Arsenal"
+            case mancity = "Manchester City"
             
             var toDropdownOption: DropdownOption {
                 .init(type: .text(rawValue),

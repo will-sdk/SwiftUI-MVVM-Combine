@@ -17,6 +17,17 @@ struct SelectTeam: View {
         }
     }
     
+    var actionSheet: ActionSheet {
+        ActionSheet(
+            title: Text("Select"),
+            buttons: viewModel.displayOptions.indices.map { index in
+                let option = viewModel.displayOptions[index]
+                return ActionSheet.Button.default(Text(option.formatted)) {
+                    viewModel.send(action: .selectOption(index: index))
+                }
+            })
+    }
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -32,9 +43,17 @@ struct SelectTeam: View {
                     }
                 }
                 
-            }.navigationTitle("Select Team")
-                .navigationBarBackButtonHidden(true)
-                .padding(.bottom, 15)
+            }
+            .actionSheet(isPresented: Binding<Bool>(
+                get: {
+                viewModel.hasSelectedDropdown
+            }, set: { _ in })
+            ) {
+                actionSheet
+            }
+            .navigationTitle("Select Team")
+            .navigationBarBackButtonHidden(true)
+            .padding(.bottom, 15)
         }
     }
 }
