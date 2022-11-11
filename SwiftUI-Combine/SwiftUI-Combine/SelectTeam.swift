@@ -32,7 +32,15 @@ struct SelectTeam: View {
                     }
                 }
                 
-            }.navigationTitle("Select Team")
+            }
+            .actionSheet(isPresented: Binding<Bool>(get: {
+                viewModel.hasSelectedDropdown
+            }, set: { _ in }), content: { () -> ActionSheet in
+                ActionSheet(title: Text("Select"), buttons: [.default(Text("test"), action: {
+                    
+                })])
+            })
+            .navigationTitle("Select Team")
                 .navigationBarBackButtonHidden(true)
                 .padding(.bottom, 15)
         }

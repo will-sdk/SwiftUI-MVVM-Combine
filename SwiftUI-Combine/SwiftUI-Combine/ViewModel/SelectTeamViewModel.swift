@@ -12,6 +12,10 @@ final class SelectTeamViewModel: ObservableObject {
         .init(type: .team),
         .init(type: .amount)
     ]
+    
+    var hasSelectedDropdown: Bool {
+        dropdowns.first(where: { $0.isSelected }) != nil
+    }
 }
 
 extension SelectTeamViewModel {
