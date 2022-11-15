@@ -9,7 +9,6 @@ import SwiftUI
 
 struct SelectTeam: View {
     @StateObject var viewModel = SelectTeamViewModel()
-    @State private var isActive = false
     
     var dropdownList: some View {
         ForEach(viewModel.dropdowns.indices, id: \.self) { index in
@@ -33,21 +32,17 @@ struct SelectTeam: View {
             VStack {
                 dropdownList
                 Spacer()
-                NavigationLink(destination: SelectMatch(),
-                               isActive: $isActive) {
-                    Button(action: {
-                        isActive = true
-                    }) {
-                        Text("Next")
-                            .font(.system(size: 24, weight: .medium))
-                    }
+                Button(action: {
+                    viewModel.send(action: .createTicket)
+                }) {
+                    Text("Create")
+                        .font(.system(size: 24, weight: .medium))
                 }
-                
             }
             .actionSheet(isPresented: Binding<Bool>(
                 get: {
-                viewModel.hasSelectedDropdown
-            }, set: { _ in })
+                    viewModel.hasSelectedDropdown
+                }, set: { _ in })
             ) {
                 actionSheet
             }

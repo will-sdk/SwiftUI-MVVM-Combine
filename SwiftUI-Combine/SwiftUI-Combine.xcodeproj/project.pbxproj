@@ -26,6 +26,7 @@
 		3F365F01291C27F200FFFDEB /* SelectMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365F00291C27F200FFFDEB /* SelectMatch.swift */; };
 		3F93C54B291D5AEB00363AB6 /* SelectTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F93C54A291D5AEB00363AB6 /* SelectTeamViewModel.swift */; };
 		3F93C54D291D5BBE00363AB6 /* DropdownItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F93C54C291D5BBE00363AB6 /* DropdownItemProtocol.swift */; };
+		3FA59C7A29240ED0000E6AF6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA59C7929240ED0000E6AF6 /* UserService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		3F365F00291C27F200FFFDEB /* SelectMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMatch.swift; sourceTree = "<group>"; };
 		3F93C54A291D5AEB00363AB6 /* SelectTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewModel.swift; sourceTree = "<group>"; };
 		3F93C54C291D5BBE00363AB6 /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
+		3FA59C7929240ED0000E6AF6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		3F0471C7291AC7C000D1AEA4 /* SwiftUI-Combine */ = {
 			isa = PBXGroup;
 			children = (
+				3FA59C7829240EC0000E6AF6 /* Service */,
 				3F01964F2922C18C00CB6908 /* GoogleService-Info.plist */,
 				3F93C549291D5AC200363AB6 /* ViewModel */,
 				3F0471C8291AC7C000D1AEA4 /* TicketStoreApp.swift */,
@@ -165,6 +168,14 @@
 				3F93C54C291D5BBE00363AB6 /* DropdownItemProtocol.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3FA59C7829240EC0000E6AF6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3FA59C7929240ED0000E6AF6 /* UserService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +324,7 @@
 				3F93C54D291D5BBE00363AB6 /* DropdownItemProtocol.swift in Sources */,
 				3F365EFD291C20EF00FFFDEB /* SelectTeam.swift in Sources */,
 				3F0471C9291AC7C000D1AEA4 /* TicketStoreApp.swift in Sources */,
+				3FA59C7A29240ED0000E6AF6 /* UserService.swift in Sources */,
 				3F0471F5291ACE0100D1AEA4 /* Color+Extension.swift in Sources */,
 				3F365EFF291C216200FFFDEB /* DropdownView.swift in Sources */,
 				3F93C54B291D5AEB00363AB6 /* SelectTeamViewModel.swift in Sources */,
