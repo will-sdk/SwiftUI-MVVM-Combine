@@ -12,6 +12,7 @@ protocol DropdownItemProtocol {
     var hraderTitle: String { get }
     var dropdownTitle: String { get }
     var isSelected: Bool { get set }
+    var selectedOption: DropdownOption { get set }
 }
 
 protocol DropdowmOptionProtocol {
@@ -25,5 +26,4 @@ struct DropdownOption {
     }
     let type: DropdownOptionType
     let formatted: String
-    var isSelected: Bool
 }

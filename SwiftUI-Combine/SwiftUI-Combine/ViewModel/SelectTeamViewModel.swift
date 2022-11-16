@@ -20,21 +20,7 @@ final class SelectTeamViewModel: ObservableObject {
     private var cancellables: [AnyCancellable] = []
     
     enum Action {
-        case selectOption(index: Int)
         case createTicket
-    }
-    
-    var hasSelectedDropdown: Bool {
-        selectedDropdownIndex != nil
-    }
-    
-    var selectedDropdownIndex: Int? {
-        dropdowns.enumerated().first(where: { $0.element.isSelected })?.offset
-    }
-    
-    var displayOptions: [DropdownOption] {
-        guard let selectedDropdownIndex = selectedDropdownIndex else { return [] }
-        return dropdowns[selectedDropdownIndex].options
     }
     
     init(userService: UserServiceProtocol = UserService()) {
@@ -43,11 +29,6 @@ final class SelectTeamViewModel: ObservableObject {
     
     func send(action: Action) {
         switch action {
-        case let .selectOption(index):
-            guard let selectedDropdownIndex = selectedDropdownIndex else { return }
-            clearSelectedOption()
-            dropdowns[selectedDropdownIndex].options[index].isSelected = true
-            clearSelectedDropdown()
         case .createTicket:
             currentUserId().sink { completion in
                 switch completion {
@@ -60,18 +41,6 @@ final class SelectTeamViewModel: ObservableObject {
                 print("retrieved userId = \(userId)")
             }.store(in: &cancellables)
         }
-    }
-    
-    func clearSelectedOption() {
-        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
-        dropdowns[selectedDropdownIndex].options.indices.forEach { index in
-            dropdowns[selectedDropdownIndex].options[index].isSelected = false
-        }
-    }
-    
-    func clearSelectedDropdown() {
-        guard let selectedDropdownIndex = selectedDropdownIndex else { return }
-        dropdowns[selectedDropdownIndex].isSelected = false
     }
     
     private func currentUserId() -> AnyPublisher<UserId, Error> {
@@ -95,6 +64,8 @@ final class SelectTeamViewModel: ObservableObject {
 
 extension SelectTeamViewModel {
     struct SelectPartViewModel: DropdownItemProtocol {
+        var selectedOption: DropdownOption
+        
         var options: [DropdownOption]
         
         var hraderTitle: String {
@@ -102,7 +73,7 @@ extension SelectTeamViewModel {
         }
         
         var dropdownTitle: String {
-            options.first(where: { $0.isSelected})?.formatted ?? ""
+            selectedOption.formatted
         }
         
         var isSelected: Bool = false
@@ -116,6 +87,7 @@ extension SelectTeamViewModel {
                 self.options = AmountOption.allCases.map { $0.toDropdownOption }
             }
             self.type = type
+            self.selectedOption = options.first!
         }
         
         enum SelectPartType: String, CaseIterable {
@@ -133,8 +105,7 @@ extension SelectTeamViewModel {
             
             var toDropdownOption: DropdownOption {
                 .init(type: .text(rawValue),
-                      formatted: rawValue.capitalized,
-                      isSelected: self == .cfc)
+                      formatted: rawValue.capitalized)
             }
         }
         
@@ -143,8 +114,7 @@ extension SelectTeamViewModel {
             
             var toDropdownOption: DropdownOption {
                 .init(type: .number(rawValue),
-                      formatted: "\(rawValue)",
-                      isSelected: self == .one)
+                      formatted: "\(rawValue)")
             }
         }
     }
