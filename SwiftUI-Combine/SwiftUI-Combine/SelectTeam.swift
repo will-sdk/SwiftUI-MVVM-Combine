@@ -11,8 +11,9 @@ struct SelectTeam: View {
     @StateObject var viewModel = SelectTeamViewModel()
     
     var dropdownList: some View {
-        ForEach(viewModel.dropdowns.indices, id: \.self) { index in
-            DropdownView(viewModel: $viewModel.dropdowns[index])
+        Group {
+            DropdownView(viewModel: $viewModel.teamDropdown)
+            DropdownView(viewModel: $viewModel.amountDropdown)
         }
     }
     

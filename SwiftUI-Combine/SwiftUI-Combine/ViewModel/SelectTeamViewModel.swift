@@ -11,10 +11,8 @@ import Combine
 typealias UserId = String
 
 final class SelectTeamViewModel: ObservableObject {
-    @Published var dropdowns: [SelectPartViewModel] = [
-        .init(type: .team),
-        .init(type: .amount)
-    ]
+    @Published var teamDropdown = SelectPartViewModel(type: .team)
+    @Published var amountDropdown = SelectPartViewModel(type: .amount)
     
     private let userService: UserServiceProtocol
     private var cancellables: [AnyCancellable] = []
