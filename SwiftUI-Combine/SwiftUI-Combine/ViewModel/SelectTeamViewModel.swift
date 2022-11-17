@@ -31,19 +31,18 @@ final class SelectTeamViewModel: ObservableObject {
     func send(action: Action) {
         switch action {
         case .createTicket:
-            currentUserId()
-                
-                
-//                .sink { completion in
-//                switch completion {
-//                case let .failure(error):
-//                    print(error.localizedDescription)
-//                case .finished:
-//                    print("completed")
-//                }
-//            } receiveValue: { userId in
-//                print("retrieved userId = \(userId)")
-//            }.store(in: &cancellables)
+            currentUserId().flatMap { userId -> AnyPublisher<Void, Error> in
+                return self.createTicket(userId: userId)
+            }.sink { completion in
+                switch completion {
+                case let .failure(error):
+                    print(error.localizedDescription)
+                case .finished:
+                    print("finished")
+                }
+            } receiveValue: { _ in
+                print("success")
+            }.store(in: &cancellables)
         }
     }
     
