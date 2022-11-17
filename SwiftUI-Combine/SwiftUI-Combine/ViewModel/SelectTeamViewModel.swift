@@ -15,30 +15,50 @@ final class SelectTeamViewModel: ObservableObject {
     @Published var amountDropdown = SelectPartViewModel(type: .amount)
     
     private let userService: UserServiceProtocol
+    private let ticketService: TicketServiceProtocol
     private var cancellables: [AnyCancellable] = []
     
     enum Action {
         case createTicket
     }
     
-    init(userService: UserServiceProtocol = UserService()) {
+    init(userService: UserServiceProtocol = UserService(),
+         ticketService: TicketServiceProtocol = TicketService()) {
         self.userService = userService
+        self.ticketService = ticketService
     }
     
     func send(action: Action) {
         switch action {
         case .createTicket:
-            currentUserId().sink { completion in
+            currentUserId().flatMap { userId -> AnyPublisher<Void, Error> in
+                return self.createTicket(userId: userId)
+            }.sink { completion in
                 switch completion {
                 case let .failure(error):
                     print(error.localizedDescription)
                 case .finished:
-                    print("completed")
+                    print("finished")
                 }
-            } receiveValue: { userId in
-                print("retrieved userId = \(userId)")
+            } receiveValue: { _ in
+                print("success")
             }.store(in: &cancellables)
         }
+    }
+    
+    private func createTicket(userId: UserId) -> AnyPublisher<Void, Error> {
+        guard let team = teamDropdown.text,
+              let amount = amountDropdown.number else {
+            return Fail(error: NSError()).eraseToAnyPublisher()
+        }
+        
+        let ticket = Ticket(team: team,
+                            amount: amount,
+                            userId: userId,
+                            startDate: Date()
+        )
+        
+        return ticketService.create(ticket).eraseToAnyPublisher()
     }
     
     private func currentUserId() -> AnyPublisher<UserId, Error> {
@@ -115,6 +135,22 @@ extension SelectTeamViewModel {
                       formatted: "\(rawValue)")
             }
         }
+    }
+}
+
+extension SelectTeamViewModel.SelectPartViewModel {
+    var text: String? {
+        if case let .text(text) = selectedOption.type {
+            return text
+        }
+        return nil
+    }
+    
+    var number: Int? {
+        if case let .number(number) = selectedOption.type {
+            return number
+        }
+        return nil
     }
 }
 
