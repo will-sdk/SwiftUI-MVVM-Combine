@@ -31,7 +31,7 @@ final class SelectTeamViewModel: ObservableObject {
     func send(action: Action) {
         switch action {
         case .createTicket:
-            currentUserId().flatMap { userId -> AnyPublisher<Void, Error> in
+            currentUserId().flatMap { userId -> AnyPublisher<Void, TicketError> in
                 return self.createTicket(userId: userId)
             }.sink { completion in
                 switch completion {
@@ -46,10 +46,10 @@ final class SelectTeamViewModel: ObservableObject {
         }
     }
     
-    private func createTicket(userId: UserId) -> AnyPublisher<Void, Error> {
+    private func createTicket(userId: UserId) -> AnyPublisher<Void, TicketError> {
         guard let team = teamDropdown.text,
               let amount = amountDropdown.number else {
-            return Fail(error: NSError()).eraseToAnyPublisher()
+            return Fail(error: .default(description: "Paesing error")).eraseToAnyPublisher()
         }
         
         let ticket = Ticket(team: team,
@@ -61,13 +61,13 @@ final class SelectTeamViewModel: ObservableObject {
         return ticketService.create(ticket).eraseToAnyPublisher()
     }
     
-    private func currentUserId() -> AnyPublisher<UserId, Error> {
+    private func currentUserId() -> AnyPublisher<UserId, TicketError> {
         print("getting user id")
-        return userService.currentUser().flatMap { user -> AnyPublisher<UserId, Error> in
+        return userService.currentUser().flatMap { user -> AnyPublisher<UserId, TicketError> in
             if let userId = user?.uid {
                 print("user is logged in...")
                 return Just(userId)
-                    .setFailureType(to: Error.self)
+                    .setFailureType(to: TicketError.self)
                     .eraseToAnyPublisher()
             } else {
                 print("user is being logged in aninymously...")

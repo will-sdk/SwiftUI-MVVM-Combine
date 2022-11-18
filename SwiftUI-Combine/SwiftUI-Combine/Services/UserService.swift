@@ -10,7 +10,7 @@ import FirebaseAuth
 
 protocol UserServiceProtocol {
     func currentUser() -> AnyPublisher<User?, Never>
-    func signInAnonymously() -> AnyPublisher<User, Error>
+    func signInAnonymously() -> AnyPublisher<User, TicketError>
 }
 
 final class UserService: UserServiceProtocol {
@@ -18,11 +18,11 @@ final class UserService: UserServiceProtocol {
         Just(Auth.auth().currentUser).eraseToAnyPublisher()
     }
     
-    func signInAnonymously() -> AnyPublisher<User, Error> {
-        return Future<User, Error> { promise in
+    func signInAnonymously() -> AnyPublisher<User, TicketError> {
+        return Future<User, TicketError> { promise in
             Auth.auth().signInAnonymously { result, error in
                 if let error = error {
-                    return promise(.failure(error))
+                    return promise(.failure(.auth(description: error.localizedDescription)))
                 } else if let user = result?.user {
                     return promise(.success(user))
                 }
