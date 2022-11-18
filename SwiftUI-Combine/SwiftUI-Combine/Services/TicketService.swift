@@ -19,7 +19,13 @@ final class TicketService: TicketServiceProtocol {
     func create(_ ticket: Ticket) -> AnyPublisher<Void, Error> {
         return Future<Void, Error> { promise in
             do {
-                _ = try self.db.collection("tickets").addDocument(from: ticket)
+                _ = try self.db.collection("tickets").addDocument(from: ticket) { error in
+                    if let error = error {
+                        promise(.failure(error))
+                    } else {
+                        promise(.success(()))
+                    }
+                }
                 promise(.success(()))
             } catch {
                 promise(.failure(error))
