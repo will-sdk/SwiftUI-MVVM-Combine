@@ -39,6 +39,11 @@ struct SelectTeam: View {
             } else {
                 mainContentView
             }
+        }.alert(isPresented: Binding<Bool>.constant($viewModel.error.wrappedValue  != nil)) {
+            Alert(title: Text("Error!"),
+                  message:  Text($viewModel.error.wrappedValue?.localizedDescription ?? ""), dismissButton: .default(Text("OK"), action: {
+                viewModel.error = nil
+            }))
         }
         .navigationTitle("Select Team")
         .navigationBarBackButtonHidden(true)

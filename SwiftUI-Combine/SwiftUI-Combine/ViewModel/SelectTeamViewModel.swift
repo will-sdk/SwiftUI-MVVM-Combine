@@ -67,15 +67,12 @@ final class SelectTeamViewModel: ObservableObject {
     }
     
     private func currentUserId() -> AnyPublisher<UserId, TicketError> {
-        print("getting user id")
         return userService.currentUser().flatMap { user -> AnyPublisher<UserId, TicketError> in
             if let userId = user?.uid {
-                print("user is logged in...")
                 return Just(userId)
                     .setFailureType(to: TicketError.self)
                     .eraseToAnyPublisher()
             } else {
-                print("user is being logged in aninymously...")
                 return self.userService
                     .signInAnonymously()
                     .map { $0.uid }
