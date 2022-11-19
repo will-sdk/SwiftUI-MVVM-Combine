@@ -17,7 +17,7 @@ struct SelectTeam: View {
         }
     }
     
-    var body: some View {
+    var mainContentView: some View {
         ScrollView {
             VStack {
                 dropdownList
@@ -29,9 +29,24 @@ struct SelectTeam: View {
                         .font(.system(size: 24, weight: .medium))
                 }
             }
-            .navigationTitle("Select Team")
-            .navigationBarBackButtonHidden(true)
-            .padding(.bottom, 15)
         }
+    }
+    
+    var body: some View {
+        ZStack {
+            if viewModel.isLoading {
+                ProgressView()
+            } else {
+                mainContentView
+            }
+        }.alert(isPresented: Binding<Bool>.constant($viewModel.error.wrappedValue  != nil)) {
+            Alert(title: Text("Error!"),
+                  message:  Text($viewModel.error.wrappedValue?.localizedDescription ?? ""), dismissButton: .default(Text("OK"), action: {
+                viewModel.error = nil
+            }))
+        }
+        .navigationTitle("Select Team")
+        .navigationBarBackButtonHidden(true)
+        .padding(.bottom, 15)
     }
 }

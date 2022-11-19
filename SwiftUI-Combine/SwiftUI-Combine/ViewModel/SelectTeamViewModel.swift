@@ -14,6 +14,9 @@ final class SelectTeamViewModel: ObservableObject {
     @Published var teamDropdown = SelectPartViewModel(type: .team)
     @Published var amountDropdown = SelectPartViewModel(type: .amount)
     
+    @Published var error: TicketError?
+    @Published var isLoading = false
+    
     private let userService: UserServiceProtocol
     private let ticketService: TicketServiceProtocol
     private var cancellables: [AnyCancellable] = []
@@ -31,12 +34,14 @@ final class SelectTeamViewModel: ObservableObject {
     func send(action: Action) {
         switch action {
         case .createTicket:
+            isLoading = true
             currentUserId().flatMap { userId -> AnyPublisher<Void, TicketError> in
                 return self.createTicket(userId: userId)
             }.sink { completion in
+                self.isLoading = false
                 switch completion {
                 case let .failure(error):
-                    print(error.localizedDescription)
+                    self.error = error
                 case .finished:
                     print("finished")
                 }
@@ -62,15 +67,12 @@ final class SelectTeamViewModel: ObservableObject {
     }
     
     private func currentUserId() -> AnyPublisher<UserId, TicketError> {
-        print("getting user id")
         return userService.currentUser().flatMap { user -> AnyPublisher<UserId, TicketError> in
             if let userId = user?.uid {
-                print("user is logged in...")
                 return Just(userId)
                     .setFailureType(to: TicketError.self)
                     .eraseToAnyPublisher()
             } else {
-                print("user is being logged in aninymously...")
                 return self.userService
                     .signInAnonymously()
                     .map { $0.uid }
