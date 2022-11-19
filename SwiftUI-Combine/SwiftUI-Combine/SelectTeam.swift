@@ -17,7 +17,7 @@ struct SelectTeam: View {
         }
     }
     
-    var body: some View {
+    var mainContentView: some View {
         ScrollView {
             VStack {
                 dropdownList
@@ -29,9 +29,19 @@ struct SelectTeam: View {
                         .font(.system(size: 24, weight: .medium))
                 }
             }
-            .navigationTitle("Select Team")
-            .navigationBarBackButtonHidden(true)
-            .padding(.bottom, 15)
         }
+    }
+    
+    var body: some View {
+        ZStack {
+            if viewModel.isLoading {
+                ProgressView()
+            } else {
+                mainContentView
+            }
+        }
+        .navigationTitle("Select Team")
+        .navigationBarBackButtonHidden(true)
+        .padding(.bottom, 15)
     }
 }
