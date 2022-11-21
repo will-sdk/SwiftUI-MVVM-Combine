@@ -26,6 +26,7 @@
 		3F365EFD291C20EF00FFFDEB /* SelectTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */; };
 		3F365EFF291C216200FFFDEB /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365EFE291C216200FFFDEB /* DropdownView.swift */; };
 		3F365F01291C27F200FFFDEB /* SelectMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365F00291C27F200FFFDEB /* SelectMatch.swift */; };
+		3F42BA4C292BE0510043D3C0 /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42BA4B292BE0510043D3C0 /* AuthPublisher.swift */; };
 		3F93C54B291D5AEB00363AB6 /* SelectTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F93C54A291D5AEB00363AB6 /* SelectTeamViewModel.swift */; };
 		3F93C54D291D5BBE00363AB6 /* DropdownItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F93C54C291D5BBE00363AB6 /* DropdownItemProtocol.swift */; };
 		3FA59C7A29240ED0000E6AF6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA59C7929240ED0000E6AF6 /* UserService.swift */; };
@@ -68,6 +69,7 @@
 		3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeam.swift; sourceTree = "<group>"; };
 		3F365EFE291C216200FFFDEB /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
 		3F365F00291C27F200FFFDEB /* SelectMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMatch.swift; sourceTree = "<group>"; };
+		3F42BA4B292BE0510043D3C0 /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
 		3F93C54A291D5AEB00363AB6 /* SelectTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewModel.swift; sourceTree = "<group>"; };
 		3F93C54C291D5BBE00363AB6 /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
 		3FA59C7929240ED0000E6AF6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		3F0471C7291AC7C000D1AEA4 /* SwiftUI-Combine */ = {
 			isa = PBXGroup;
 			children = (
+				3F42BA4A292BE02B0043D3C0 /* Publishers */,
 				3F2F425D2926A66300BC5E62 /* Models */,
 				3FA59C7829240EC0000E6AF6 /* Services */,
 				3F01964F2922C18C00CB6908 /* GoogleService-Info.plist */,
@@ -175,6 +178,14 @@
 				3F2F425E2926A69500BC5E62 /* Ticket.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		3F42BA4A292BE02B0043D3C0 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				3F42BA4B292BE0510043D3C0 /* AuthPublisher.swift */,
+			);
+			path = Publishers;
 			sourceTree = "<group>";
 		};
 		3F93C549291D5AC200363AB6 /* ViewModel */ = {
@@ -335,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F42BA4C292BE0510043D3C0 /* AuthPublisher.swift in Sources */,
 				3F2F425F2926A69500BC5E62 /* Ticket.swift in Sources */,
 				3F0471F3291ACCA900D1AEA4 /* PrimaryButtonStyle.swift in Sources */,
 				3F0471CB291AC7C000D1AEA4 /* LandingView.swift in Sources */,
