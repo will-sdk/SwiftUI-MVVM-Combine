@@ -30,6 +30,7 @@
 		3F93C54B291D5AEB00363AB6 /* SelectTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F93C54A291D5AEB00363AB6 /* SelectTeamViewModel.swift */; };
 		3F93C54D291D5BBE00363AB6 /* DropdownItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F93C54C291D5BBE00363AB6 /* DropdownItemProtocol.swift */; };
 		3FA59C7A29240ED0000E6AF6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA59C7929240ED0000E6AF6 /* UserService.swift */; };
+		3FB314B3292D3FB4009605D5 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB314B2292D3FB4009605D5 /* TabContainerView.swift */; };
 		3FE55676292824BB0095F7BB /* TicketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE55675292824BB0095F7BB /* TicketError.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		3F93C54A291D5AEB00363AB6 /* SelectTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewModel.swift; sourceTree = "<group>"; };
 		3F93C54C291D5BBE00363AB6 /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
 		3FA59C7929240ED0000E6AF6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		3FB314B2292D3FB4009605D5 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
 		3FE55675292824BB0095F7BB /* TicketError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -143,6 +145,7 @@
 				3F365EFE291C216200FFFDEB /* DropdownView.swift */,
 				3F365F00291C27F200FFFDEB /* SelectMatch.swift */,
 				3FE55675292824BB0095F7BB /* TicketError.swift */,
+				3FB314B2292D3FB4009605D5 /* TabContainerView.swift */,
 			);
 			path = "SwiftUI-Combine";
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				3F93C54D291D5BBE00363AB6 /* DropdownItemProtocol.swift in Sources */,
 				3F365EFD291C20EF00FFFDEB /* SelectTeam.swift in Sources */,
 				3F0471C9291AC7C000D1AEA4 /* TicketStoreApp.swift in Sources */,
+				3FB314B3292D3FB4009605D5 /* TabContainerView.swift in Sources */,
 				3FA59C7A29240ED0000E6AF6 /* UserService.swift in Sources */,
 				3F0471F5291ACE0100D1AEA4 /* Color+Extension.swift in Sources */,
 				3F365EFF291C216200FFFDEB /* DropdownView.swift in Sources */,
