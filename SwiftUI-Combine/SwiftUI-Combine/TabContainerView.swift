@@ -14,8 +14,12 @@ struct TabContainerView: View {
         TabView {
             ForEach(tabContainerViewModel.tabItemViewModels, id: \.self) { viewModel in
                 tabView(for: viewModel.type)
+                    .tabItem {
+                        Image(systemName: viewModel.imageName)
+                        Text(viewModel.title)
+                    }
             }
-        }
+        }.accentColor(.primary)
     }
     
     @ViewBuilder
