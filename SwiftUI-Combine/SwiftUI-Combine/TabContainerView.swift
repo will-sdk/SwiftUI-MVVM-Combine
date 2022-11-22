@@ -11,13 +11,14 @@ struct TabContainerView: View {
     @StateObject private var tabContainerViewModel = TabContacinerViewModel()
     
     var body: some View {
-        TabView {
+        TabView(selection: $tabContainerViewModel.selectedTab) {
             ForEach(tabContainerViewModel.tabItemViewModels, id: \.self) { viewModel in
                 tabView(for: viewModel.type)
                     .tabItem {
                         Image(systemName: viewModel.imageName)
                         Text(viewModel.title)
                     }
+                    .tag(viewModel.type)
             }
         }.accentColor(.primary)
     }
