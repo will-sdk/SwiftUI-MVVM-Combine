@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct TabContainerView: View {
+    @StateObject private var tabContainerViewModel = TabContacinerViewModel()
+    
     var body: some View {
         TabView {
-            
+            ForEach(tabContainerViewModel.tabItemViewModels, id: \.self) { viewModel in
+                tabView(for: viewModel.type)
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func tabView(for tabItemType: TabItemViewModel.TabItemType) -> some View {
+        switch tabItemType {
+        case .history:
+            Text("History")
+        case .ticketList:
+            Text("Ticket List")
+        case . setting:
+            Text("Settings")
         }
     }
 }
@@ -26,7 +42,7 @@ final class TabContacinerViewModel: ObservableObject {
     ]
 }
 
-struct TabItemViewModel {
+struct TabItemViewModel: Hashable {
     let imageName: String
     let title: String
     let type: TabItemType
