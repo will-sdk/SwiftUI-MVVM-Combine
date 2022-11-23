@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F0471C9291AC7C000D1AEA4 /* SwiftUI_CombineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471C8291AC7C000D1AEA4 /* SwiftUI_CombineApp.swift */; };
-		3F0471CB291AC7C000D1AEA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471CA291AC7C000D1AEA4 /* ContentView.swift */; };
+		3F0196482922BE1B00CB6908 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3F0196472922BE1B00CB6908 /* FirebaseAnalytics */; };
+		3F01964A2922BE1B00CB6908 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3F0196492922BE1B00CB6908 /* FirebaseAuth */; };
+		3F01964C2922BE1B00CB6908 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3F01964B2922BE1B00CB6908 /* FirebaseFirestore */; };
+		3F01964E2922BE1B00CB6908 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3F01964D2922BE1B00CB6908 /* FirebaseFirestoreSwift */; };
+		3F0196502922C18C00CB6908 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F01964F2922C18C00CB6908 /* GoogleService-Info.plist */; };
+		3F0471C9291AC7C000D1AEA4 /* TicketStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471C8291AC7C000D1AEA4 /* TicketStoreApp.swift */; };
+		3F0471CB291AC7C000D1AEA4 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471CA291AC7C000D1AEA4 /* LandingView.swift */; };
 		3F0471CD291AC7C100D1AEA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0471CC291AC7C100D1AEA4 /* Assets.xcassets */; };
 		3F0471D0291AC7C100D1AEA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F0471CF291AC7C100D1AEA4 /* Preview Assets.xcassets */; };
 		3F0471DA291AC7C100D1AEA4 /* SwiftUI_CombineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471D9291AC7C100D1AEA4 /* SwiftUI_CombineTests.swift */; };
 		3F0471E4291AC7C100D1AEA4 /* SwiftUI_CombineUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471E3291AC7C100D1AEA4 /* SwiftUI_CombineUITests.swift */; };
 		3F0471E6291AC7C100D1AEA4 /* SwiftUI_CombineUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471E5291AC7C100D1AEA4 /* SwiftUI_CombineUITestsLaunchTests.swift */; };
+		3F0471F3291ACCA900D1AEA4 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471F2291ACCA900D1AEA4 /* PrimaryButtonStyle.swift */; };
+		3F0471F5291ACE0100D1AEA4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0471F4291ACE0100D1AEA4 /* Color+Extension.swift */; };
+		3F2F425F2926A69500BC5E62 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F425E2926A69500BC5E62 /* Ticket.swift */; };
+		3F2F42612926A78300BC5E62 /* TicketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2F42602926A78300BC5E62 /* TicketService.swift */; };
+		3F365EFD291C20EF00FFFDEB /* SelectTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */; };
+		3F365EFF291C216200FFFDEB /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365EFE291C216200FFFDEB /* DropdownView.swift */; };
+		3F365F01291C27F200FFFDEB /* SelectMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F365F00291C27F200FFFDEB /* SelectMatch.swift */; };
+		3F42BA4C292BE0510043D3C0 /* AuthPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F42BA4B292BE0510043D3C0 /* AuthPublisher.swift */; };
+		3F93C54B291D5AEB00363AB6 /* SelectTeamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F93C54A291D5AEB00363AB6 /* SelectTeamViewModel.swift */; };
+		3F93C54D291D5BBE00363AB6 /* DropdownItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F93C54C291D5BBE00363AB6 /* DropdownItemProtocol.swift */; };
+		3FA59C7A29240ED0000E6AF6 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA59C7929240ED0000E6AF6 /* UserService.swift */; };
+		3FB314B3292D3FB4009605D5 /* TabContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB314B2292D3FB4009605D5 /* TabContainerView.swift */; };
+		3FE55676292824BB0095F7BB /* TicketError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE55675292824BB0095F7BB /* TicketError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +52,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F01964F2922C18C00CB6908 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F0471C5291AC7C000D1AEA4 /* SwiftUI-Combine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-Combine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F0471C8291AC7C000D1AEA4 /* SwiftUI_CombineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CombineApp.swift; sourceTree = "<group>"; };
-		3F0471CA291AC7C000D1AEA4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3F0471C8291AC7C000D1AEA4 /* TicketStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketStoreApp.swift; sourceTree = "<group>"; };
+		3F0471CA291AC7C000D1AEA4 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		3F0471CC291AC7C100D1AEA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F0471CF291AC7C100D1AEA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3F0471D5291AC7C100D1AEA4 /* SwiftUI-CombineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-CombineTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +63,19 @@
 		3F0471DF291AC7C100D1AEA4 /* SwiftUI-CombineUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-CombineUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F0471E3291AC7C100D1AEA4 /* SwiftUI_CombineUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CombineUITests.swift; sourceTree = "<group>"; };
 		3F0471E5291AC7C100D1AEA4 /* SwiftUI_CombineUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CombineUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F0471F2291ACCA900D1AEA4 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		3F0471F4291ACE0100D1AEA4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		3F2F425E2926A69500BC5E62 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		3F2F42602926A78300BC5E62 /* TicketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketService.swift; sourceTree = "<group>"; };
+		3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeam.swift; sourceTree = "<group>"; };
+		3F365EFE291C216200FFFDEB /* DropdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownView.swift; sourceTree = "<group>"; };
+		3F365F00291C27F200FFFDEB /* SelectMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMatch.swift; sourceTree = "<group>"; };
+		3F42BA4B292BE0510043D3C0 /* AuthPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPublisher.swift; sourceTree = "<group>"; };
+		3F93C54A291D5AEB00363AB6 /* SelectTeamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewModel.swift; sourceTree = "<group>"; };
+		3F93C54C291D5BBE00363AB6 /* DropdownItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownItemProtocol.swift; sourceTree = "<group>"; };
+		3FA59C7929240ED0000E6AF6 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		3FB314B2292D3FB4009605D5 /* TabContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabContainerView.swift; sourceTree = "<group>"; };
+		3FE55675292824BB0095F7BB /* TicketError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +83,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F0196482922BE1B00CB6908 /* FirebaseAnalytics in Frameworks */,
+				3F01964A2922BE1B00CB6908 /* FirebaseAuth in Frameworks */,
+				3F01964C2922BE1B00CB6908 /* FirebaseFirestore in Frameworks */,
+				3F01964E2922BE1B00CB6908 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,10 +130,22 @@
 		3F0471C7291AC7C000D1AEA4 /* SwiftUI-Combine */ = {
 			isa = PBXGroup;
 			children = (
-				3F0471C8291AC7C000D1AEA4 /* SwiftUI_CombineApp.swift */,
-				3F0471CA291AC7C000D1AEA4 /* ContentView.swift */,
+				3F42BA4A292BE02B0043D3C0 /* Publishers */,
+				3F2F425D2926A66300BC5E62 /* Models */,
+				3FA59C7829240EC0000E6AF6 /* Services */,
+				3F01964F2922C18C00CB6908 /* GoogleService-Info.plist */,
+				3F93C549291D5AC200363AB6 /* ViewModel */,
+				3F0471C8291AC7C000D1AEA4 /* TicketStoreApp.swift */,
+				3F0471CA291AC7C000D1AEA4 /* LandingView.swift */,
 				3F0471CC291AC7C100D1AEA4 /* Assets.xcassets */,
 				3F0471CE291AC7C100D1AEA4 /* Preview Content */,
+				3F0471F2291ACCA900D1AEA4 /* PrimaryButtonStyle.swift */,
+				3F0471F4291ACE0100D1AEA4 /* Color+Extension.swift */,
+				3F365EFC291C20EF00FFFDEB /* SelectTeam.swift */,
+				3F365EFE291C216200FFFDEB /* DropdownView.swift */,
+				3F365F00291C27F200FFFDEB /* SelectMatch.swift */,
+				3FE55675292824BB0095F7BB /* TicketError.swift */,
+				3FB314B2292D3FB4009605D5 /* TabContainerView.swift */,
 			);
 			path = "SwiftUI-Combine";
 			sourceTree = "<group>";
@@ -127,6 +175,40 @@
 			path = "SwiftUI-CombineUITests";
 			sourceTree = "<group>";
 		};
+		3F2F425D2926A66300BC5E62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3F2F425E2926A69500BC5E62 /* Ticket.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3F42BA4A292BE02B0043D3C0 /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				3F42BA4B292BE0510043D3C0 /* AuthPublisher.swift */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
+		3F93C549291D5AC200363AB6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3F93C54A291D5AEB00363AB6 /* SelectTeamViewModel.swift */,
+				3F93C54C291D5BBE00363AB6 /* DropdownItemProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3FA59C7829240EC0000E6AF6 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3FA59C7929240ED0000E6AF6 /* UserService.swift */,
+				3F2F42602926A78300BC5E62 /* TicketService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +225,12 @@
 			dependencies = (
 			);
 			name = "SwiftUI-Combine";
+			packageProductDependencies = (
+				3F0196472922BE1B00CB6908 /* FirebaseAnalytics */,
+				3F0196492922BE1B00CB6908 /* FirebaseAuth */,
+				3F01964B2922BE1B00CB6908 /* FirebaseFirestore */,
+				3F01964D2922BE1B00CB6908 /* FirebaseFirestoreSwift */,
+			);
 			productName = "SwiftUI-Combine";
 			productReference = 3F0471C5291AC7C000D1AEA4 /* SwiftUI-Combine.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +303,9 @@
 				Base,
 			);
 			mainGroup = 3F0471BC291AC7C000D1AEA4;
+			packageReferences = (
+				3F0196462922BE1B00CB6908 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 3F0471C6291AC7C000D1AEA4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +324,7 @@
 			files = (
 				3F0471D0291AC7C100D1AEA4 /* Preview Assets.xcassets in Resources */,
 				3F0471CD291AC7C100D1AEA4 /* Assets.xcassets in Resources */,
+				3F0196502922C18C00CB6908 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +349,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F0471CB291AC7C000D1AEA4 /* ContentView.swift in Sources */,
-				3F0471C9291AC7C000D1AEA4 /* SwiftUI_CombineApp.swift in Sources */,
+				3F42BA4C292BE0510043D3C0 /* AuthPublisher.swift in Sources */,
+				3F2F425F2926A69500BC5E62 /* Ticket.swift in Sources */,
+				3F0471F3291ACCA900D1AEA4 /* PrimaryButtonStyle.swift in Sources */,
+				3F0471CB291AC7C000D1AEA4 /* LandingView.swift in Sources */,
+				3F2F42612926A78300BC5E62 /* TicketService.swift in Sources */,
+				3F365F01291C27F200FFFDEB /* SelectMatch.swift in Sources */,
+				3F93C54D291D5BBE00363AB6 /* DropdownItemProtocol.swift in Sources */,
+				3F365EFD291C20EF00FFFDEB /* SelectTeam.swift in Sources */,
+				3F0471C9291AC7C000D1AEA4 /* TicketStoreApp.swift in Sources */,
+				3FB314B3292D3FB4009605D5 /* TabContainerView.swift in Sources */,
+				3FA59C7A29240ED0000E6AF6 /* UserService.swift in Sources */,
+				3F0471F5291ACE0100D1AEA4 /* Color+Extension.swift in Sources */,
+				3F365EFF291C216200FFFDEB /* DropdownView.swift in Sources */,
+				3FE55676292824BB0095F7BB /* TicketError.swift in Sources */,
+				3F93C54B291D5AEB00363AB6 /* SelectTeamViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +682,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3F0196462922BE1B00CB6908 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3F0196472922BE1B00CB6908 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F0196462922BE1B00CB6908 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3F0196492922BE1B00CB6908 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F0196462922BE1B00CB6908 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		3F01964B2922BE1B00CB6908 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F0196462922BE1B00CB6908 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		3F01964D2922BE1B00CB6908 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3F0196462922BE1B00CB6908 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3F0471BD291AC7C000D1AEA4 /* Project object */;
 }
